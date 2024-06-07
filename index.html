@@ -1,0 +1,49 @@
+<html>
+<head>
+	<title>Temparture Converter By Raj </title>
+	<style>
+		*{font-size:40px; font:Cambria;}
+		body{background-color:lightyellow;}
+	</style>
+
+</head>
+
+
+<body>
+<center>
+	<h1> Temparture Converter </h1>
+	<form>
+		<label for ="cel">Celcius</label>
+		<input type="number" step="any" placeholder="Enter temp in cel" id="cel">
+		<br><br>
+		<label for ="fah">Fahrenheit</label>
+		<input type="number" step="any" placeholder="Enter temp in fah" id="fah">
+	</form>
+
+
+	<script>
+		
+			let cel = document.getElementById("cel");
+			let fah = document.getElementById("fah");
+
+			cel.addEventListener("input", function()
+			{
+				let c = parseFloat(cel.value);
+				let f = (c*9/5)+32;
+				fah.value = f.toFixed(2);
+			});
+
+			fah.addEventListener("input", function()
+			{
+				let f = parseFloat(fah.value);
+				let c = (f-32) * 5/9;
+				cel.value = c.toFixed(2);
+			});
+
+		
+
+	</script>
+
+</center>
+</body>
+</html>
